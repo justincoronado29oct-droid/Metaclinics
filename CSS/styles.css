@@ -26,7 +26,7 @@ background: #FFFFFF;
 border-radius: 50%;
 }
 .cicle1::before{
-content: 'qw';
+content: 'w';
 position: absolute;
 width: 1418px;
 height: 1306px;
@@ -107,13 +107,17 @@ font-family: 'inter', sans-serif;
 align-items: center;
 display: flex;
 }
+/* logo */
+.logo{
+margin-left: 20px;
+}
 /* botones del header */
 .btn_container{
 width: 500px;
 height: 93px;
 align-items: center;
 display: flex;
-margin-left: 1400px;
+margin-left: 1380px;
 }
 .btn_header{
 box-sizing: border-box;
@@ -135,6 +139,10 @@ flex: none;
 order: 0;
 flex-grow: 0;
 margin-right: 6px;
+transition: .4s ease-in-out;
+}
+.btn_header:hover{
+box-shadow: rgba(245, 245, 245, 0.767) 2px 1px 7px 1px;
 }
 .btn_headerAlt{
 box-sizing: border-box;
@@ -179,20 +187,20 @@ color: #FFFFFF;
 }
 /* texto */
 .text_init{
-font-family: 'Poppins';
+font-family: 'Poppins',sans-serif;
 font-style: normal;
 font-weight: 300;
 font-size: 22px;
-line-height: 37px;
 color: #EAEAEA;
 }
 /* botones principakes */
 /* container */
 .btn_conta{
 display: flex;
+align-items: center;
+padding-left: 210px;
 }
 /* btn registrer */
-/* From Uiverse.io by gharsh11032000 */ 
 .animated-button {
 width: 300px;
 position: relative;
@@ -209,6 +217,8 @@ cursor: pointer;
 overflow: hidden;
 transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 margin-right: 20px;
+left: -100px;
+top: 30px;
 }
 .animated-button span:last-child {
 position: absolute;
@@ -238,9 +248,67 @@ width: 300px;
 height: 150px;
 opacity: 1;
 }
-
-
-
+/* buton inicio sesion */
+.animated-buttonCreate{
+width: 300px;
+position: relative;
+display: inline-block;
+padding: 12px 24px;
+border: none;
+font-size: 16px;
+background-color: inherit;
+border-radius: 100px;
+font-weight: 600;
+color: #000000;
+box-shadow: 0 0 0 2px #ffffff7c;
+cursor: pointer;
+overflow: hidden;
+transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+margin-right: 20px;
+left: -100px;
+top: 30px;
+background-color: #FFFFFF;
+}
+.animated-buttonCreate span:last-child {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 20px;
+height: 20px;
+background-color: #000000;
+border-radius: 50%;
+opacity: 0;
+transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.animated-buttonCreate span:first-child {
+position: relative;
+z-index: 1;
+}
+.animated-buttonCreate:hover {
+box-shadow: 0 0 0 5px #a3a2a293;
+color: #ffffff;
+}
+.animated-buttonCreate:active {
+scale: 0.95;
+}
+.animated-buttonCreate:hover span:last-child {
+width: 300px;
+height: 150px;
+opacity: 1;
+}
+/* footer */
+footer{
+position: absolute;
+top: 530px;
+color: #eaeaea75;
+}
+.footer_text{
+transition:.3s ease-in-out;
+}
+.footer_text:hover{
+color: whitesmoke;
+}
 /* animaciones */
 @keyframes latir {
 0%{
