@@ -110,6 +110,13 @@ display: flex;
 /* logo */
 .logo{
 margin-left: 20px;
+transition: .4s ease-in-out;
+}
+.logo::before{
+content: "q";
+}
+.logo:hover{
+margin-top: 50px;
 }
 /* botones del header */
 .btn_container{
@@ -163,6 +170,10 @@ color: black;
 flex: none;
 order: 0;
 flex-grow: 0;
+transition: .4s ease-in-out;
+}
+.btn_headerAlt:hover{
+box-shadow: rgba(245, 245, 245, 0.767) 2px 1px 7px 1px;
 }
 /* contenido principal */
 .text_container{
