@@ -11,7 +11,7 @@ position: relative;
 width: 100%;
 height: 100vh;
 background: #050106;
-overflow: hidden;
+overflow: hidden;}
 /* *circulos decorativos */
 /* cicle1 */
 .cicle1 {
@@ -112,16 +112,50 @@ overflow: hidden;
 width: 400px;
 overflow: hidden;
 }
-.pill{
+.btn {
+font-size: 17px;
+background: transparent;
+border: none;
+padding: 1em 1.5em;
+color: #ffffff;
+text-transform: uppercase;
+position: relative;
+transition: 0.5s ease;
+cursor: pointer;
+}
+.btn::before {
+content: "";
 position: absolute;
-top: 80px;
+left: 0;
+bottom: 0;
+height: 2px;
+width: 0;
+background-color: #0026ff;
+transition: 0.5s ease;
 }
-.logo{
-margin-left: 20px;
-transition: .3s ease-in-out;
+.btn:hover {
+color: #1e1e2b;
+transition-delay: 0.5s;
 }
-.logo:hover{
-margin-top: 10px;
+.btn:hover::before {
+width: 100%;
+}
+.btn::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+height: 0;
+width: 100%;
+background-color: #ffffff;
+transition: 0.4s ease;
+z-index: -1;
+}
+.btn:hover::after {
+height: 100%;
+transition-delay: 0.4s;
+color: aliceblue;
+border-radius: 4px;
 }
 /* botones del header */
 .btn_container{
@@ -318,6 +352,8 @@ footer{
 position: absolute;
 top: 530px;
 color: #eaeaea75;
+left: 750px;
+top: 900px;
 }
 .footer_text{
 transition:.3s ease-in-out;
@@ -336,4 +372,4 @@ transform: scale(1.2);
 100%{
 transform: scale(1);   
 }
-}
+} 
