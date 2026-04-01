@@ -88,6 +88,20 @@ top: -674px;
 background: #000000;
 border-radius: 50%;
 }
+.cicles_container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform-origin: center center;
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), filter 0.9s ease;
+  z-index: -2;
+}
+.cicles_container.circles-moved {
+  transform: translateY(40%) rotate(180deg);
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.35));
+}
 /* container */
 .container{
 position: relative;
@@ -207,12 +221,12 @@ padding: 6px 27px;
 gap: 15px;
 width: 170px;
 height: 38px;
-background-color: white;
+background-color: transparent;
 border: 2.5px solid #FFFFFF;
 border-radius: 39px;
 font-family:'poppins', sans-serif;
 font-weight: 500;
-color: black;
+color: rgb(255, 255, 255);
 flex: none;
 order: 0;
 flex-grow: 0;
@@ -221,6 +235,19 @@ transition: .4s ease-in-out;
 .btn_headerAlt:hover{
 box-shadow: rgba(245, 245, 245, 0.767) 2px 1px 7px 1px;
 }
+/* estado activo para botones del header */
+.btn_header.active,
+.btn_headerAlt.active {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+.btn_header.active:hover,
+.btn_headerAlt.active:hover {
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.95);
+}
+
 /* contenido principal */
 .inicio{
 transition:.60s ease-in-out;
@@ -360,21 +387,31 @@ opacity: 1;
 /* login */
 .login,
 .registrer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 851px;
-  max-width: 90%;
-  min-height: 480px;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(88.35px);
-  border-radius: 14px;
-  overflow: auto;
-  scrollbar-width: none;
-  background: rgba(8, 10, 28, 0);
+position: absolute;
+top: 50%;
+left: 50%;
+text-align: center;
+transform: translate(-50%, -50%);
+width: 851px;
+max-width: 90%;
+min-height: 480px;
+box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.35);
+backdrop-filter: blur(88.35px);
+border-radius: 14px;
+padding: 20px;
+overflow: auto;
+scrollbar-width: none;
+background: rgba(8, 10, 28, 0);
+color: whitesmoke;
 }
-
+.login h1{
+font-family: "Alexandria", sans-serif;
+font-weight: 600;
+}
+.login p{
+font-family: "Poppins", sans-serif; 
+font-weight: 300;
+}
 /* footer */
 footer{
 position: absolute;
