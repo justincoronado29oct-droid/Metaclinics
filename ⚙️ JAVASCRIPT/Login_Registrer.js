@@ -15,6 +15,7 @@ const inicio = document.getElementById("containerInit");
 const botones = document.querySelectorAll(".btnS");
 const clickSoundPath = "/🎵 Audios/click.mp3";
 const clickSound =  "/🎵 Audios/btnClicksound.mp3";
+const popSoundPath = "/🎵 Audios/pop.mp3";
 function playHoverSound(audio) {
 const hoverSound = new Audio(audio);
 hoverSound.volume = 0.3;
@@ -103,24 +104,24 @@ moveCirclesDown();
 // Event listener para todos los botones volver
 const volverBtns = document.querySelectorAll('.goback');
 volverBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    showInicio();
-    playHoverSound(clickSound);
-  });
-  btn.addEventListener('mouseenter', () => {
-    playHoverSound(clickSoundPath);
-  });
+btn.addEventListener('click', () => {
+showInicio();
+playHoverSound(clickSound);
+});
+btn.addEventListener('mouseenter', () => {
+playHoverSound(clickSoundPath);
+});
 });
 
 const cancelBtns = document.querySelectorAll('.btni.cancel');
 cancelBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    showInicio();
-    playHoverSound(clickSound);
-  });
-  btn.addEventListener('mouseenter', () => {
-    playHoverSound(clickSoundPath);
-  });
+btn.addEventListener('click', () => {
+showInicio();
+playHoverSound(clickSound);
+});
+btn.addEventListener('mouseenter', () => {
+playHoverSound(clickSoundPath);
+});
 });
 
 // mover el contenedor de círculos hacia abajo al interactuar con botones
@@ -165,65 +166,67 @@ let registeredEmail = '';
 let registeredPassword = '';
 
 function showRegisterMessage(message, type = 'error') {
-  if (!registerMessage) return;
-  registerMessage.textContent = message;
-  registerMessage.classList.toggle('success', type === 'success');
+if (!registerMessage) return;
+registerMessage.textContent = message;
+registerMessage.classList.toggle('success', type === 'success');
 }
 
 function clearRegisterMessage() {
-  if (!registerMessage) return;
-  registerMessage.textContent = '';
-  registerMessage.classList.remove('success');
+if (!registerMessage) return;
+registerMessage.textContent = '';
+registerMessage.classList.remove('success');
 }
 
 function showLoginMessage(message, type = 'error') {
-  if (!loginMessage) return;
-  loginMessage.textContent = message;
-  loginMessage.classList.toggle('success', type === 'success');
+if (!loginMessage) return;
+loginMessage.textContent = message;
+loginMessage.classList.toggle('success', type === 'success');
 }
 
 function clearLoginMessage() {
-  if (!loginMessage) return;
-  loginMessage.textContent = '';
-  loginMessage.classList.remove('success');
+if (!loginMessage) return;
+loginMessage.textContent = '';
+loginMessage.classList.remove('success');
 }
 
 function togglePasswordVisibility(show) {
-  const newType = show ? 'text' : 'password';
-  if (passwordInput) passwordInput.type = newType;
-  if (confirmPasswordInput) confirmPasswordInput.type = newType;
-  if (loginPasswordInput) loginPasswordInput.type = newType;
+const newType = show ? 'text' : 'password';
+if (passwordInput) passwordInput.type = newType;
+if (confirmPasswordInput) confirmPasswordInput.type = newType;
+if (loginPasswordInput) loginPasswordInput.type = newType;
 }
 
 if (togglePasswordCheckbox) {
-  togglePasswordCheckbox.addEventListener('change', (event) => {
-    togglePasswordVisibility(event.target.checked);
-  });
+togglePasswordCheckbox.addEventListener('change', (event) => {
+togglePasswordVisibility(event.target.checked);
+});
 }
 
 const formInputs = document.querySelectorAll('.input');
 formInputs.forEach((input) => {
-  input.addEventListener('click', () => {
-    input.value = '';
-  });
+input.addEventListener('click', () => {
+input.value = '';
+});
 });
 
 if (createAccountBtn) {
-  createAccountBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    clearRegisterMessage();
+createAccountBtn.addEventListener('click', (event) => {
+event.preventDefault();
+clearRegisterMessage();
 
-    const nameValue = fullNameInput?.value.trim() || '';
-    const emailValue = emailInput?.value.trim() || '';
-    const passwordValue = passwordInput?.value || '';
-    const confirmValue = confirmPasswordInput?.value || '';
+const nameValue = fullNameInput?.value.trim() || '';
+const emailValue = emailInput?.value.trim() || '';
+const passwordValue = passwordInput?.value || '';
+const confirmValue = confirmPasswordInput?.value || '';
 
-    if (!nameValue || !emailValue || !passwordValue || !confirmValue) {
+if (!nameValue || !emailValue || !passwordValue || !confirmValue) {
+      playHoverSound(clickSound);
       showRegisterMessage('Todos los campos son obligatorios.', 'error');
       return;
     }
 
     if (passwordValue !== confirmValue) {
+      playHoverSound(clickSound);
       showRegisterMessage('Las contraseñas no coinciden.', 'error');
       return;
     }
@@ -232,48 +235,51 @@ if (createAccountBtn) {
     registeredEmail = emailValue;
     registeredPassword = passwordValue;
 
-    showRegisterMessage('Cuenta creada con éxito. Redirigiendo al login...', 'success');
-    if (registrerBlock) registrerBlock.classList.add('hidden');
-    setTimeout(() => {
-      inicio.classList.add('animado');
-      showLogin();
-      moveCirclesDown();
-    }, 400);
-  });
+    playHoverSound(popSoundPath);
+if (registrerBlock) registrerBlock.classList.add('hidden');
+setTimeout(() => {
+inicio.classList.add('animado');
+showLogin();
+moveCirclesDown();
+}, 400);
+});
 }
 
 if (loginConfirmBtn) {
-  loginConfirmBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    clearLoginMessage();
+loginConfirmBtn.addEventListener('click', (event) => {
+event.preventDefault();
+clearLoginMessage();
 
-    const emailValue = loginEmailInput?.value.trim() || '';
-    const passwordValue = loginPasswordInput?.value || '';
+const emailValue = loginEmailInput?.value.trim() || '';
+const passwordValue = loginPasswordInput?.value || '';
 
-    if (!emailValue || !passwordValue) {
-      showLoginMessage('Completa todos los campos para iniciar sesión.', 'error');
-      return;
-    }
+if (!emailValue || !passwordValue) {
+playHoverSound(clickSound);
+showLoginMessage('Completa todos los campos para iniciar sesión.', 'error');
+return;
+}
 
-    if (emailValue !== registeredEmail || passwordValue !== registeredPassword) {
-      showLoginMessage('Correo o contraseña incorrectos.', 'error');
-      return;
-    }
+if (emailValue !== registeredEmail || passwordValue !== registeredPassword) {
+playHoverSound(clickSound);
+showLoginMessage('Correo o contraseña incorrectos.', 'error');
+return;
+}
 
-    showLoginMessage('Ingreso exitoso. Bienvenido de nuevo.', 'success');
-    setTimeout(() => {
-      showInicio();
-    }, 600);
-  });
+playHoverSound(popSoundPath);
+showLoginMessage('Ingreso exitoso. Bienvenido de nuevo.', 'success');
+setTimeout(() => {
+showInicio();
+}, 600);
+});
 }
 
 if (passwordInput && passwordHelp) {
-  passwordInput.addEventListener('focus', () => {
-    passwordHelp.style.opacity = '1';
-    passwordHelp.style.visibility = 'visible';
-  });
-  passwordInput.addEventListener('blur', () => {
-    passwordHelp.style.opacity = '0';
-    passwordHelp.style.visibility = 'hidden';
-  });
+passwordInput.addEventListener('focus', () => {
+passwordHelp.style.opacity = '1';
+passwordHelp.style.visibility = 'visible';
+});
+passwordInput.addEventListener('blur', () => {
+passwordHelp.style.opacity = '0';
+passwordHelp.style.visibility = 'hidden';
+});
 }
