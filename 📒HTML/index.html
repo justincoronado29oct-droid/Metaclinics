@@ -33,7 +33,7 @@ Tu navegador no soporta audio HTML5.
 <!-- botones header -->
 <span class="btn_container">
 <button class="btn_header btn_R btnS" id="registrate">Crear cuenta</button>
-<button class="btn_headerAlt btn_I btnS" id="crearCuenta">Iniciar sesion</button>
+<button class="btn_headerAlt btn_I btnS" id="crearCuenta">Iniciar sesión</button>
 </span>
 </header>
 <!-- contenedor de inicio -->
@@ -46,7 +46,7 @@ Tu navegador no soporta audio HTML5.
 <div class="btn_conta">
 <!-- registrate -->
 <button class="animated-button btn_R btnS" id="registrate">
-<span>Registrate</span>
+<span>Iniciar sesión</span>
 <span></span>
 </button>
 <!-- crear cuenta -->
@@ -58,24 +58,48 @@ Tu navegador no soporta audio HTML5.
 </div>
 <!-- login -->
 <div class="login" id="login">
+<button class="goback"> < </button>
+<img src="/📷 IMG/brazo-arriba.png" alt="">
+<h1>Bienvenido de nuevo</h1>
+<p>Ingresa tus datos para iniciar sesión en MetaClinics</p>
+<div class="input-container">
+<label for="CorreoElectronicoLogin" class="input-label">Correo electrónico</label>
+<input type="email" class="input" placeholder="Correo electrónico" name="email" id="CorreoElectronicoLogin">
+<label for="ContraseñaLogin" class="input-label">Contraseña</label>
+<input type="password" class="input" placeholder="Contraseña" name="password" id="ContraseñaLogin">
+<span id="loginMessage" class="field-message"></span>
+<div class="btn-container">
+<button type="button" class="btni cancel">Cancelar</button>
+<button type="button" class="btni confirm" id="loginConfirmBtn">Iniciar sesión</button>
+</div>
+</div>
 </div>
 <!-- registrer -->
 <div class="registrer" id="registrer">
+<button class="goback" id="volver"> < </button>
 <img src="/📷 IMG/brazo-arriba.png" alt="">
 <h1>Hola,¿Eres nuevo?</h1>
 <p>Ingresa los datos solicitados para crera tu cuenta de MetaClinics </p>
 <!-- campos de formulario -->
 <div class="input-container">
-<label for="Nombrecompleto">Nombre completo</label>
+<label for="Nombrecompleto" class="input-label">Nombre completo</label>
 <input type="text" class="input" placeholder="Nombre completo" name="nombre" id="Nombrecompleto">
-<label for="CorreoElectronico">Correo electrónico</label>
+<label for="CorreoElectronico" class="input-label">Correo electrónico</label>
 <input type="email" class="input" placeholder="Correo electrónico" name="email" id="CorreoElectronico">
-<label for="Contraseña">Contraseña</label>
+<label for="Contraseña" class="input-label">Contraseña</label>
 <input type="password" class="input" placeholder="Contraseña" name="password" id="Contraseña">
-<label for="ConfirmarContraseña">Confirmar contraseña</label>
+<span id="passwordHelp" class="password-help">Mínimo de 8 caracteres, mayúsculas y simbolos (!,$,@).</span>
+<label for="ConfirmarContraseña" class="input-label">Confirmar contraseña</label>
 <input type="password" class="input" id="ConfirmarContraseña" placeholder="Confirmar contraseña" name="confirm_password">
-<button class="Btn">Cancelar</button>
-<button class="Btn">Crear Cuenta</button>
+<span id="registerMessage" class="field-message"></span>
+<div class="password-toggle">
+<input type="checkbox" id="togglePassword">
+<label for="togglePassword">Mostrar contraseña</label>
+</div>
+</div>
+<div class="btn-container">
+<button type="button" class="btni cancel">Cancelar</button>
+<button type="button" class="btni confirm" id="createAccountBtn">Crear Cuenta</button>
 </div>
 </div>
 <!-- footer -->
